@@ -1,0 +1,8 @@
+{% if request.user.is_authenticated %}
+    {{ request.user.phone }}
+    <br><a href="{% url 'accounts:logout' %}">Logout</a>
+{% else %}
+    <h1>Tizimdan ro'yxatdan o'ting</h1>
+    <a href="{% url 'accounts:login' %}">SignIn</a><br>
+    <a href="">SignUp</a>
+{% endif %}
